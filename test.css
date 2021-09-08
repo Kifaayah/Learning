@@ -1,0 +1,32 @@
+body{
+   margin: 0;
+}
+
+
+header{
+    background-color: #02313177;
+    padding: 50px;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px ;
+}
+.article{
+    width: 500px;
+    margin: 75px auto;
+}
+
+
+.container{
+    background-color: #011111d8;
+    color: #ffffff; 
+}
+
+.columns{
+    width: 760px ;
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+}
+.column{
+    margin: 0 10px;
+} 

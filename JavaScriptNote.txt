@@ -1,0 +1,280 @@
+                                            JAVASCRIPT NOTE
+Declaration, initialization, assignment
+Functions
+Functions in javascript are blocks of code designated to perform particular tasks, 
+they are reuseable and can be called anywhere in your program, it may not receive an input but must return an output.
+A Javascript function is defined with the function keyword, followed by functionName, followed by parentheses().
+ The parentheses may or may not include parameter names separated by commas. i.e known to more than one parameters. 
+ The code to be executed by the function is placed inside curly brackets.
+ Syntax looks like this: function functionName (parameter1, parameter2) {
+     //code to be executed
+ } 
+ The code written inside will not be executed until you call/invoke that function. You call a function by writing 
+ out the functionName(). An argument have to be passed while calling the funtion - functionName(arg1, arg2).
+  Arguments are values received by a function when it is invoked or called.
+
+  declaring a function:
+  function functionName(parameter1, parameter2) {
+      //code to be executed
+  }
+
+  Calling a function:
+  functionName(argument1, argument2)
+  Function Return:
+  It returns sth afetr a code execution. The return keyword is used to return the final result in a function. 
+  When javaScript reaches a return statement, the function wil stop executing
+  The syntax looks like this:
+        function functionName()
+        {
+            //code to be executed
+            return value
+        }
+A variable can hold a function. See the sample code below:
+    var square = function (number) {
+        let result = number * number;
+        return result;
+    }
+console.log(square(10));
+// Expected output: 100
+
+Arrrow Function:
+This pattern of writing a functionwas introduced in ES6.
+It allows you write shorter function syntax without the use of function keyword. Instead an arrow-like syntax is used (=>)
+an equal to sign and greater than sign-
+square = (number) => {
+    return number * number;
+}
+
+console.log('square(2));
+console.log('square(5));
+console.log('square(8));
+
+ARRAY
+An array is an ordered set of values that you refer to with a name and an index, they are special kind of
+ variables that can hold or store more than one value at a time. These values can be of different data types.
+ Arrays are zero-index i.e the first element in an array has an index of zero
+
+ Creating an Array
+ There are multiple ways to create Arrays:
+ var arr = new Array(element0, element1, ..., elementN);
+ var arr = Array(element0, element1, ..., elementN);
+ var arr = [element0, element1, ..., elementN];
+
+Looping Through an Array
+let fruits = ['Apple', 'Banana', 'Grape'];
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+    OR
+let fruits = ['Apple', 'Banana', 'Grape'];
+fruits.forEach(function(item){
+    console.log(item);
+});
+forEach function executes a function for each member of the array.
+
+Populating an Array:
+One can populate an array by assigning values to its elements
+[] is an empty array with no values
+fruits[0] add an element (Apple) at the 0 position of the array
+
+
+OTHER ARRAY METHODS:
+Add an item to the end of an Array
+push(item) add a new item at the end of the array.
+
+ Example:
+let fruits = ['Apple', 'Banana', 'Grape'];
+fruits.push('Orange');
+console.log(fruits);
+//END//
+Remove an item from the end of an Array
+pop() - remove an item from the end of the array
+
+Example:
+let fruits = ['Apple', 'Banana', 'Grape'];
+fruits.pop();
+console.log(fruits);
+//
+
+Remove an item from the beginning of an Array:
+shift() - remove an item from the beginning of the  Array.
+
+xample:
+let fruits = ['Apple', 'Banana', 'Grape'];
+fruits.shift();
+console.log(fruits);
+
+
+MULTI-DIMENSIONAL ARRAY:
+Arrays can be nested, this means that an array can contain another array as
+an element.
+Example:
+let arr = [
+    ['red', 'blue', 'yellow', 'pink'],
+    [20, 300, 400, 23, 10, 5],
+    ['apple', 'grape', ['orange', 'tomato']]
+];
+To access the value 400 in the second array above:
+console.log(arr[1][2]);
+
+
+                        OBJECTS IN JAVASCRIPT
+An object is a collection of related data (number, strings,etc) and/or functionality
+(methods) that describes a given entity.
+
+Objects in JavaScript can be compared to real-life objects that have properties that 
+describe it. For instance, a t-shirt(object) will have a color, a size, etc(properties)
+
+These properties store values (just like variables) which can either be primitive or 
+refernced. This makes objects the most important data type in JavaScript.
+
+Here's the syntax to create an object:
+var objectName = {
+    member1Name: member1value,
+    member2Name: function(){.....},
+    member3Name: member3Value,
+    member4Name: [....]
+};
+
+
+Example:
+let person = {
+    name: 'Jumoke',
+    age: 29,
+    gender: 'female',
+    interests:['cooking', 'shopping'],
+    greeting: function() {
+        return "Hi! I'm " + this.name + '.';
+    }
+};
+//"this" keyword allows us to access the object we are working with and access all the 
+//properties
+
+console.log(person.greeting());
+//Hi! I'm Adaa.
+console.log(person.age);
+console.log(person.interests[0]);
+console.log(person['gender']);
+//End of Example//
+
+ Accessing An object properties can be done by:
+ Using dot (.) notation and
+ Using sqaure bracket [] with the property name written inside it.
+ Example:
+ objectName.member1value
+    //OR
+objectName['member1value']
+
+An object's method can be accesses using dot(.) notation only.
+Methods- are actions and they are represented as function definitions in an object 
+            objectName.member2Name()
+
+Adding a New Property to an Existing Object:
+A new property can be added to the person object we have created initially (object.js)
+
+                        SCOPING AND HOISTING
+Scoping simply dtermines where variablescan be accessible (visible) in your code at runtime. Therefore, the scope of 
+a variable i.e where it can be accesses, is determined by the location of where the variable is declared whether 
+globally or locally.
+
+The two types of scope in JavaScript:
+1.  Global scope
+2.  Function Scope Or Local Scope
+
+A variable declared inside of a function i said to have local scope. This means the variable can only be accessed 
+within the function where it is declared.
+
+                                BLOCK SCOPE
+Before ES6, JavaScripthad only two types of scope: Global and Local Scope. ES6 introduced two important new JavaScript
+keywords: let and const. These two keywords provide Block Scope variables in JavaScript. 
+
+    Variable declared inside a block {} (block statement like if block or for loop) with the var keyword cannot have
+block scope, that is, they can be accessed from outside the block.
+     Variable declared inside a block {}, with the let keyword have block scope that is, they cannot be accessed from 
+outside the block.
+ N.B: variaable declare with thw var keyword is accessible outside the block while the variaable declared with the let
+ keyword is only accessible within the block.
+
+                                    HOISTING
+Hoisting in JavaScript is simply moving all variables to the top of their scope whether global or local scope.
+    The interpreter moves them first to the top
+    It therefore means that, even before they are executed, they have beeen processed first.
+ NB: Hoisting only moves their declaration not the initialization. 
+
+                    JAVASCRIPT CLASSES
+Classes in JavaScript are special kinds of function, but instead of initializing it using the function keyword, the class 
+keyword is used. It is meant to mimic or act like class in other programming languages.
+
+Syntaxof a class. A class must have a class name, className.
+                class ClassName {
+                    constructor(property1, property2) {
+                        this.property1 = property1;
+                        this.property2 = property2;
+                    }
+                }
+                objectName = new ClassName('property1', 'property2');
+
+                    CONSTRUCTOR
+Constructor method (construcutor()) is used to intitailize an object properties when an object is created. It is called
+automatically when a class is initiated. A constructor can hold more than one property, it can also be empty. If you do
+not have a constructor method within your class, JavaScript automatically creates an empty construtor() for you.
+
+            STATIC METHOD
+    Static methods are used to create additional utilities function for an application
+static methods are defined on the class itself , and not on the prototpe. i.e one cannot call a static method on the object
+(myFullName), but on the class (Person).
+NB: When you call a static method on an object, it will throw an error
+
+                    INHERITANCE
+Sometimes class A might want to make use of the properties and methods from class B. Hence there is a need to create a class 
+inheritance in which class A will have to extend (JavaScript keyword) class B. 
+NB: A class (class A) created with class inheritance inherits all the properties and methods from the other class(class B)
+
+                GETTERS AND SETTERS
+So, classes also allow you to set and get properties. To use getters and setters in your class you make use of the keywords
+get and set respectively.
+
+                GUIDE TO WRITING JAVASCRIPT
+In programming language a good naming convention is needed to be followed. a naming convention is a generally accepted
+way of naming things.
+There are 3 different ways of naming things in programming languages:
+1.  snake_case - all letters and written in small letters and separated with an underscore symbol (_).
+2.  camelCase - the fisrt letter of the second word is capitalised.
+3.  PascalCase - the first letter on each word is capitalised.
+
+
+                DECAGON SESSIONS
+An algorithm is a sequence of well defined instructions designed for a computer to
+follow in order to solve a problem.
+
+A variable is one of the important fundamental concepts of programming.It is a name
+identifier that points to the data location in the computer memory.
+
+A variable:
+must have a meaningful name 
+is case sensitive
+can not contain a hyphen
+can not start with a number
+can not be a reserved keyword.
+
+    There are two tyypes of conditional in JavaScript:
+if and else
+switch and case
+
+Control flow:
+for loop 
+while loop
+Do while loop
+For in loop
+For of loop
+
+JavaScript Functions
+
+DATA TYPES 
+Objects,symbols, undefined, null,symbols, 
+
+                        PLURALSIGHT LESSON
+    Object Properties
+DOM - Document Object Model
+
+
